@@ -5,7 +5,7 @@ import { LobeOpenAICompatibleFactory } from '../utils/openaiCompatibleFactory';
 import { OpenRouterModelCard } from './type';
 
 export const LobeOpenRouterAI = LobeOpenAICompatibleFactory({
-  baseURL: 'https://openrouter.ai/api/v1',
+  baseURL: 'https://o-router.zoco.cc/api/v1',
   constructorOptions: {
     defaultHeaders: {
       'HTTP-Referer': 'https://chat-preview.lobehub.com',

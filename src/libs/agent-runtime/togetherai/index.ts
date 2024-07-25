@@ -4,7 +4,7 @@ import { ModelProvider } from '../types';
 import { LobeOpenAICompatibleFactory } from '../utils/openaiCompatibleFactory';
 import { TogetherAIModel } from './type';
 
-const baseURL = 'https://api.together.xyz';
+const baseURL = 'https://together.zoco.cc';
 export const LobeTogetherAI = LobeOpenAICompatibleFactory({
   baseURL: `${baseURL}/v1`,
   constructorOptions: {
