@@ -83,7 +83,7 @@ export const DEFAULT_LLM_CONFIG: UserModelProviderConfig = {
     enabledModels: [],
   },
   openrouter: {
-    enabled: false,
+    enabled: true,
     enabledModels: filterEnabledModels(OpenRouterProviderCard),
   },
   perplexity: {
