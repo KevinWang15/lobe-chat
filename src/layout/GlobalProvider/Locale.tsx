@@ -1,20 +1,20 @@
 'use client';
 
-import { ConfigProvider } from 'antd';
+import {ConfigProvider} from 'antd';
 import dayjs from 'dayjs';
-import { PropsWithChildren, memo, useEffect, useState } from 'react';
-import { isRtlLang } from 'rtl-detect';
+import {PropsWithChildren, memo, useEffect, useState} from 'react';
+import {isRtlLang} from 'rtl-detect';
 
-import { createI18nNext } from '@/locales/create';
-import { isOnServerSide } from '@/utils/env';
-import { getAntdLocale } from '@/utils/locale';
+import {createI18nNext} from '@/locales/create';
+import {isOnServerSide} from '@/utils/env';
+import {getAntdLocale} from '@/utils/locale';
 
 interface LocaleLayoutProps extends PropsWithChildren {
   antdLocale?: any;
   defaultLang?: string;
 }
 
-const Locale = memo<LocaleLayoutProps>(({ children, defaultLang, antdLocale }) => {
+const Locale = memo<LocaleLayoutProps>(({children, defaultLang, antdLocale}) => {
   const [i18n] = useState(createI18nNext(defaultLang));
   const [lang, setLang] = useState(defaultLang);
   const [locale, setLocale] = useState(antdLocale);
@@ -37,7 +37,9 @@ const Locale = memo<LocaleLayoutProps>(({ children, defaultLang, antdLocale }) =
         if (!lang) return;
 
         // load default lang
-        const dayJSLocale = await import(`dayjs/locale/${lang!.toLowerCase()}.js`);
+        let l = lang!.toLowerCase();
+        if (l === 'en-us') l = 'en';
+        const dayJSLocale = await import(`dayjs/locale/${l}.js`);
 
         dayjs.locale(dayJSLocale.default);
       });
@@ -53,7 +55,9 @@ const Locale = memo<LocaleLayoutProps>(({ children, defaultLang, antdLocale }) =
       const newLocale = await getAntdLocale(lng);
       setLocale(newLocale);
 
-      const dayJSLocale = await import(`dayjs/locale/${lng.toLowerCase()}.js`);
+      let l = lng.toLowerCase();
+      if (l === 'en-us') l = 'en';
+      const dayJSLocale = await import(`dayjs/locale/${l}.js`);
 
       dayjs.locale(dayJSLocale.default);
     };

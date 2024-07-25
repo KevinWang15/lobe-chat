@@ -25,8 +25,6 @@ export const usePlatform = () => {
 
   return {
     ...platformInfo,
-    isSupportInstallPWA:
-      (platformInfo.isChromium && !platformInfo.isIOS) ||
-      (platformInfo.isMacOS && platformInfo.isSonomaOrLaterSafari),
+    isSupportInstallPWA: false,
   };
 };

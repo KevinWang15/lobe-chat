@@ -78,34 +78,6 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
 
   return (
     <Flexbox gap={8} width={'100%'}>
-      <Flexbox align={'center'} horizontal justify={'space-between'}>
-        <div className={styles.title}>{t('guide.agents.title')}</div>
-        <ActionIcon
-          icon={RefreshCw}
-          onClick={handleRefresh}
-          size={{ blockSize: 24, fontSize: 14 }}
-          title={t('guide.agents.replaceBtn')}
-        />
-      </Flexbox>
-      <Grid gap={8} rows={2}>
-        {isLoading
-          ? loadingCards
-          : agentList.slice(sliceStart, sliceStart + agentLength).map((agent) => (
-              <Link href={`/market?agent=${agent.identifier}`} key={agent.identifier}>
-                <Flexbox className={styles.card} gap={8} horizontal>
-                  <Avatar avatar={agent.meta.avatar} style={{ flex: 'none' }} />
-                  <Flexbox gap={mobile ? 2 : 8} style={{ overflow: 'hidden', width: '100%' }}>
-                    <Paragraph className={styles.cardTitle} ellipsis={{ rows: 1 }}>
-                      {agent.meta.title}
-                    </Paragraph>
-                    <Paragraph className={styles.cardDesc} ellipsis={{ rows: mobile ? 1 : 2 }}>
-                      {agent.meta.description}
-                    </Paragraph>
-                  </Flexbox>
-                </Flexbox>
-              </Link>
-            ))}
-      </Grid>
     </Flexbox>
   );
 });

@@ -1,78 +1,48 @@
-import { ModelProviderCard } from '@/types/llm';
+import {ModelProviderCard} from '@/types/llm';
 
 // ref https://docs.together.ai/docs/inference-models
 const TogetherAI: ModelProviderCard = {
   chatModels: [
     {
-      displayName: 'Deepseek Coder Instruct (33B)',
+      displayName: 'Meta-Llama-3.1-405B-Instruct-Turbo',
       enabled: true,
+      id: 'meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo',
+      tokens: 16_384,
+    },
+    {
+      displayName: 'meta-llama/Meta-Llama-3-70B-Instruct-Lite',
+      enabled: false,
+      id: 'meta-llama/Meta-Llama-3-70B-Instruct-Lite',
+      tokens: 8_192,
+    },
+    {
+      displayName: 'Qwen/Qwen2-72B-Instruct',
+      enabled: false,
+      id: 'Qwen/Qwen2-72B-Instruct',
+      tokens: 16_384,
+    },
+    {
+      displayName: 'mistralai/Mixtral-8x22B-Instruct-v0.1',
+      enabled: false,
+      id: 'mistralai/Mixtral-8x22B-Instruct-v0.1',
+      tokens: 16_384,
+    },
+    {
+      displayName: 'deepseek-ai/deepseek-llm-67b-chat',
+      enabled: false,
+      id: 'deepseek-ai/deepseek-llm-67b-chat',
+      tokens: 16_384,
+    },
+    {
+      displayName: 'deepseek-ai/deepseek-coder-33b-instruct',
+      enabled: false,
       id: 'deepseek-ai/deepseek-coder-33b-instruct',
       tokens: 16_384,
     },
-    {
-      displayName: 'Phind Code LLaMA v2 (34B)',
-      enabled: true,
-      id: 'Phind/Phind-CodeLlama-34B-v2',
-      tokens: 16_384,
-    },
-    {
-      displayName: 'Gemma Instruct (2B)',
-      enabled: true,
-      id: 'google/gemma-2b-it',
-      tokens: 8192,
-    },
-    {
-      displayName: 'LLaMA-2 Chat (13B)',
-      enabled: true,
-      id: 'meta-llama/Llama-2-13b-chat-hf',
-      tokens: 4096,
-    },
-    {
-      displayName: '01-ai Yi Chat (34B)',
-      enabled: true,
-      id: 'zero-one-ai/Yi-34B-Chat',
-      tokens: 4096,
-    },
-    {
-      displayName: 'Mixtral-8x7B Instruct (46.7B)',
-      enabled: true,
-      id: 'mistralai/Mixtral-8x7B-Instruct-v0.1',
-      tokens: 32_768,
-    },
-    {
-      displayName: 'Nous Hermes 2 - Mixtral 8x7B-DPO (46.7B)',
-      enabled: true,
-      id: 'NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO',
-      tokens: 32_768,
-    },
-    {
-      displayName: 'Nous Hermes-2 Yi (34B)',
-      enabled: true,
-      id: 'NousResearch/Nous-Hermes-2-Yi-34B',
-      tokens: 4096,
-    },
-    {
-      displayName: 'Qwen 1.5 Chat (7B)',
-      enabled: true,
-      id: 'Qwen/Qwen1.5-7B-Chat',
-      tokens: 32_768,
-    },
-    {
-      displayName: 'Qwen 1.5 Chat (32B)',
-      enabled: true,
-      id: 'Qwen/Qwen1.5-32B-Chat',
-      tokens: 32_768,
-    },
-    {
-      displayName: 'Qwen 1.5 Chat (72B)',
-      enabled: true,
-      id: 'Qwen/Qwen1.5-72B-Chat',
-      tokens: 32_768,
-    },
   ],
-  checkModel: 'togethercomputer/alpaca-7b',
+  checkModel: 'meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo',
   id: 'togetherai',
-  modelList: { showModelFetcher: true },
+  modelList: {showModelFetcher: false},
   name: 'Together AI',
 };
 

@@ -15,7 +15,7 @@ import { useCategory as useSettingsCategory } from '../../settings/features/useC
 
 export const useCategory = () => {
   const router = useRouter();
-  const { canInstall, install } = usePWAInstall();
+
   const { t } = useTranslation(['common', 'setting', 'auth']);
   const [isLogin, isLoginWithAuth, isLoginWithClerk] = useUserStore((s) => [
     authSelectors.isLogin(s),
@@ -49,7 +49,7 @@ export const useCategory = () => {
       icon: Download,
       key: 'pwa',
       label: t('installPWA'),
-      onClick: () => install(),
+      onClick: () => {},
     },
     {
       type: 'divider',
@@ -109,7 +109,6 @@ export const useCategory = () => {
     /* ↓ cloud slot ↓ */
 
     /* ↑ cloud slot ↑ */
-    ...(canInstall ? pwa : []),
     ...(isLogin && !isServerMode ? data : []),
     ...helps,
   ].filter(Boolean) as CellProps[];

@@ -52,7 +52,7 @@ export const mapFeatureFlagsEnvToState = (config: IFeatureFlags) => {
     isAgentEditable: config.edit_agent,
 
     showCreateSession: config.create_session,
-    showLLM: config.language_model_settings,
+    showLLM: false,
 
     showOpenAIApiKey: config.openai_api_key,
     showOpenAIProxyUrl: config.openai_proxy_url,

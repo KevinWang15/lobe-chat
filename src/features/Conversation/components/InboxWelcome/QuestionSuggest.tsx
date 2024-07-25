@@ -71,13 +71,6 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
     <Flexbox gap={8} width={'100%'}>
       <Flexbox align={'center'} horizontal justify={'space-between'}>
         <div className={styles.title}>{t('guide.questions.title')}</div>
-        <Link href={USAGE_DOCUMENTS} target={'_blank'}>
-          <ActionIcon
-            icon={ArrowRight}
-            size={{ blockSize: 24, fontSize: 16 }}
-            title={t('guide.questions.moreBtn')}
-          />
-        </Link>
       </Flexbox>
       <Flexbox gap={8} horizontal wrap={'wrap'}>
         {qa.slice(0, mobile ? 2 : 5).map((item) => {

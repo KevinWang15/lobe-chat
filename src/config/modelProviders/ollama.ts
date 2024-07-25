@@ -5,7 +5,7 @@ const Ollama: ModelProviderCard = {
   chatModels: [
     {
       displayName: 'Llama3 8B',
-      enabled: true,
+      enabled: false,
       id: 'llama3',
       tokens: 8000, // https://huggingface.co/blog/zh/llama3#llama-3-的新进展
     },
@@ -16,7 +16,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Phi-3 3.8B',
-      enabled: true,
+      enabled: false,
       id: 'phi3',
       tokens: 128_000,
     },
@@ -27,7 +27,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Aya 23 8B',
-      enabled: true,
+      enabled: false,
       id: 'aya',
       tokens: 8192, // https://cohere.com/research/papers/aya-command-23-8b-and-35b-technical-report-2024-05-23
     },
@@ -38,7 +38,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Qwen2 7B',
-      enabled: true,
+      enabled: false,
       id: 'qwen2',
       tokens: 128_000,
     },
@@ -49,7 +49,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Command R 35B',
-      enabled: true,
+      enabled: false,
       id: 'command-r',
       tokens: 131_072, // https://huggingface.co/CohereForAI/c4ai-command-r-v01/blob/main/config.json
     },
@@ -60,7 +60,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Gemma2 9B',
-      enabled: true,
+      enabled: false,
       id: 'gemma2',
       tokens: 8192, // https://huggingface.co/blog/zh/gemma2
     },
@@ -81,7 +81,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Deepseek V2 16B',
-      enabled: true,
+      enabled: false,
       id: 'deepseek-v2',
       tokens: 32_000,
     },
@@ -92,7 +92,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'Deepseek Coder V2 16B', // https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct
-      enabled: true,
+      enabled: false,
       id: 'deepseek-coder-v2',
       tokens: 128_000,
     },
@@ -128,7 +128,7 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'WizardLM 2 7B',
-      enabled: true,
+      enabled: false,
       id: 'wizardlm2',
       tokens: 65_536,
     },
@@ -159,13 +159,13 @@ const Ollama: ModelProviderCard = {
     },
     {
       displayName: 'MathΣtral',
-      enabled: true,
+      enabled: false,
       id: 'mathstral',
       tokens: 32_000, // https://huggingface.co/mistralai/mathstral-7B-v0.1
     },
     {
       displayName: 'Mixtral 8x7B',
-      enabled: true,
+      enabled: false,
       id: 'mixtral',
       tokens: 32_768,
     },
@@ -198,19 +198,19 @@ const Ollama: ModelProviderCard = {
       displayName: 'LLaVA 7B',
       id: 'llava',
       tokens: 4096, // https://huggingface.co/llava-hf/llava-1.5-7b-hf/blob/main/config.json
-      vision: true,
+      vision: false,
     },
     {
       displayName: 'LLaVA 13B',
       id: 'llava:13b',
       tokens: 4096,
-      vision: true,
+      vision: false,
     },
     {
       displayName: 'LLaVA 34B',
       id: 'llava:34b',
       tokens: 4096,
-      vision: true,
+      vision: false,
     },
   ],
   defaultShowBrowserRequest: true,

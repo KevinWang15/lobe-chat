@@ -51,7 +51,6 @@ const UserInfo = memo<UserInfoProps>(({ avatarProps, ...rest }) => {
           <div className={styles.username}>{username}</div>
         </Flexbox>
       </Flexbox>
-      <PlanTag />
     </Flexbox>
   );
 });

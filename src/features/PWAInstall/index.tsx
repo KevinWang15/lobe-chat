@@ -5,7 +5,6 @@ import { memo, useEffect, useLayoutEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PWA_INSTALL_ID } from '@/const/layoutTokens';
-import { usePWAInstall } from '@/hooks/usePWAInstall';
 import { usePlatform } from '@/hooks/usePlatform';
 import { useGlobalStore } from '@/store/global';
 import { systemStatusSelectors } from '@/store/global/selectors';
@@ -20,7 +19,6 @@ const PWAInstall = memo(() => {
   const { t } = useTranslation('metadata');
   const { isPWA } = usePlatform();
 
-  const { install, canInstall } = usePWAInstall();
 
   const isShowPWAGuide = useUserStore((s) => s.isShowPWAGuide);
   const [hidePWAInstaller, updateSystemStatus] = useGlobalStore((s) => [
@@ -56,14 +54,6 @@ const PWAInstall = memo(() => {
     };
   }, [pwaInstall]);
 
-  // trigger the PWA guide on demand
-  useEffect(() => {
-    if (!canInstall || hidePWAInstaller) return;
-
-    if (isShowPWAGuide) {
-      install();
-    }
-  }, [canInstall, hidePWAInstaller, isShowPWAGuide]);
 
   if (isPWA) return null;
   return <PWA description={t('chat.description')} id={PWA_INSTALL_ID} />;

@@ -26,3 +26,5 @@ export const DEFAULT_SETTINGS: UserSettings = {
   tool: DEFAULT_TOOL_CONFIG,
   tts: DEFAULT_TTS_CONFIG,
 };
+
+

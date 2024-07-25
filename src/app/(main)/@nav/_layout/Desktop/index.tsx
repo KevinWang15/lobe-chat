@@ -1,9 +1,9 @@
 'use client';
 
-import { SideNav } from '@lobehub/ui';
-import { memo } from 'react';
+import {SideNav} from '@lobehub/ui';
+import {memo} from 'react';
 
-import { useActiveTabKey } from '@/hooks/useActiveTabKey';
+import {useActiveTabKey} from '@/hooks/useActiveTabKey';
 
 import Avatar from './Avatar';
 import BottomActions from './BottomActions';
@@ -13,10 +13,10 @@ const Nav = memo(() => {
   const sidebarKey = useActiveTabKey();
   return (
     <SideNav
-      avatar={<Avatar />}
-      bottomActions={<BottomActions />}
-      style={{ height: '100%', zIndex: 100 }}
-      topActions={<TopActions tab={sidebarKey} />}
+      avatar={<Avatar/>}
+      bottomActions={<></>}
+      style={{height: '100%', zIndex: 100}}
+      topActions={<TopActions tab={sidebarKey}/>}
     />
   );
 });

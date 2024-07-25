@@ -207,7 +207,7 @@ class Ld {
   }
 
   private fixTitle(title: string) {
-    return title.includes('LobeChat') ? title : `${title} · LobeChat`;
+    return title;
   }
 
   private fixUrl(url: string) {

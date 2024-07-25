@@ -16,6 +16,7 @@ import { useUserStore } from '@/store/user';
 import { modelProviderSelectors } from '@/store/user/selectors';
 import { ModelProviderCard } from '@/types/llm';
 import { withBasePath } from '@/utils/basePath';
+import TogetherAI from "@/config/modelProviders/togetherai";
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   menu: css`
@@ -50,7 +51,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
   ]);
 
   const router = useRouter();
-  const enabledList = useUserStore(modelProviderSelectors.modelProviderListForModelSelect, isEqual);
+  const enabledList=[TogetherAI]
 
   const items = useMemo<ItemType[]>(() => {
     const getModelItems = (provider: ModelProviderCard) => {

@@ -74,13 +74,13 @@ export const DEFAULT_LLM_CONFIG: UserModelProviderConfig = {
     enabledModels: filterEnabledModels(NovitaProviderCard),
   },
   ollama: {
-    enabled: true,
+    enabled: false,
     enabledModels: filterEnabledModels(OllamaProviderCard),
     fetchOnClient: true,
   },
   openai: {
-    enabled: true,
-    enabledModels: filterEnabledModels(OpenAIProviderCard),
+    enabled: false,
+    enabledModels: [],
   },
   openrouter: {
     enabled: false,
@@ -103,7 +103,7 @@ export const DEFAULT_LLM_CONFIG: UserModelProviderConfig = {
     enabledModels: filterEnabledModels(TaichuProviderCard),
   },
   togetherai: {
-    enabled: false,
+    enabled: true,
     enabledModels: filterEnabledModels(TogetherAIProviderCard),
   },
   zeroone: {
@@ -116,6 +116,6 @@ export const DEFAULT_LLM_CONFIG: UserModelProviderConfig = {
   },
 };
 
-export const DEFAULT_MODEL = 'gpt-4o-mini';
+export const DEFAULT_MODEL = 'meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo';
 
-export const DEFAULT_PROVIDER = ModelProvider.OpenAI;
+export const DEFAULT_PROVIDER = 'togetherai';
